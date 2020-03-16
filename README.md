@@ -32,3 +32,34 @@ function verifylongitude(longitude) {
       return true;
   }
 }
+// undefined || null
+export function isNone(object) {
+  if (object === undefined || object === null) {
+    return true
+  }
+  return false
+}
+
+// 判断对象类型
+export function checkObjType(object, type) {
+  if (!isNone(object) && object.constructor === type) {
+    return true
+  }
+  return false
+}
+
+// 空数组
+export function isArrayEmpty(array) {
+  if (checkObjType(array, Array) && array.length > 0) {
+    return false
+  }
+  return true
+}
+
+// 空字符串
+export function isTextEmpty(text) {
+  if (checkObjType(text, String) && text !== '') {
+    return false
+  }
+  return true
+}
